@@ -18,7 +18,12 @@
             <th scope="row">1</th>
             <td>Mark</td>
             <td>Otto</td>
-            <td>@mdo</td>
+            <td><a href="#" class="btn-sm btn-danger">X</a></td>
+        </tr>
+        <tr>
+            <th scope="row">add:</th>
+            <td colspan="2"><input class="form-control" type="text" name="" id=""></td>
+            <td><input class="btn-sm btn-primary" type="submit"></td>
         </tr>
         </tbody>
     </table>
