@@ -1,0 +1,33 @@
+Realestate
+Aplikacija za rukovođenje podacima prilagođeno korisniku.
+Aplikacija mora manipulistai po nalogu krisnika podacima koji se razvrstabaju na 4 osnovne kategorije a to su:
+⦁	Realestate (belongs to owner, belongs to many claims)
+⦁	Owner (has many realestate, belongs to user)
+⦁	Claim (has many realestates)
+⦁	User (has many owners)
+a.	agenti
+b.	adimn
+
+Aplikacija mora imati slobodnu (entry point, index) početnu stranu koja prikazuje formu za LOGIN, bez korisničke šifre i lozinke svaki ledeći pristup aplikaciji je nemoguć.
+Može sadržati redirekciju za FORGOT_PASSWORD.
+Nakon validacije usera - AGENTI:
+Pristupaju početnoj stranici koja ima nvigacijski bar koji sadrži stranice:
+1.	Realestates
+2.	Owners
+3.	Claims
+4.	Base
+ispod navigacije početna stanica sadrži 3 tabele obaveštenja,
+1.	UPDATE podacima iz baze (podaci koji su dan ranije izmenjeni), ili ID korisnika kog je ulogovani agent dan ranije "notirao"
+2.	podaci o aktivnosti REALESTEa; mesec, nedelju i 1 dan pre izlaska REALESTAEa iz pasive-crveni button ID tog REALESTATE
+3.	upozorenje o reodjendanu Ownera (nedelju dana ranije)
+REALESTATE starnica, sadrži tabelu svih realestatea koji su poređani po datumu aktivnosti DESC, sa odabranim podacima o realestateu. Bitni podaci na toj tabeli su
+⦁	CHECKbox kojim se odabira jedna ili više realestate i prosleđuju se 1  klikom na stanicu koja je spakovala u attachment fotografije (i odvojila u zipfile po IDjevima čekiranih realestate), neke podatke o lokaciji i opis iz baze, ostatak forme je prazan i dopisuje se kontakt adresa gde se šalje mejl. Ako taj kontakt nije zaveden i tabelu Claim u bazi, automatski se adresa upisuje u tabelu Claims i uvezuje se sa  IDjevima posaltih realestate, ako adresa postoji u tabeli Claims, samo se uvezuje sa Id čekiranih realestatea.
+⦁	dugme za odabir pojadinačneog realestatea koji redirektuje na stranicu pregleda svih podataka o tom realestateu
+⦁	dugme za pregled fotografija pojedinačnog realestatea
+Ralestate stranica takođe sadrži polje za pretragu u kojoj je moguće upisati bilo koji podatak iz čitave baze podataka, a tabela treba da izlista samo realetstate koji imaju veze sa navedenim pojmom. Kao i dugme za redirekciju na stranicu gde se nalazi forma za upis novih realestatea.
+OWNER stranica takođe sadrži tabelu svih ownera sa odabranim podacima, od specifičnosti vezanih za tabelu ništa nema za izdvojiti.
+Claim stranica takođe kao i owner.
+User - ADMIN:
+Ima pravo da menja podatke i da ih briše, dodaje nove agente (dodeljuje im korisničke šifre).
+Stranica BASE:
+sadrži tabele svake sporedne/vezne tabele iz baze i agenti imaju pravo da dopisuju podatke u tabele i da ih čitaju, a admin da ih briše i edituje.
