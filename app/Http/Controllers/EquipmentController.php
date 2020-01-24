@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Object_type;
+use App\Equipement;
 use Illuminate\Http\Request;
 
-class ObjecTypeController extends Controller
+class EquipmentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ObjecTypeController extends Controller
      */
     public function index()
     {
-        $items = Object_type::all();
+        $items = Equipement::all();
         return view('base',['items'=>$items]);
     }
 
@@ -32,11 +32,11 @@ class ObjecTypeController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $object_type= new Object_type([
+        $object_type= new Equipement([
             'name'=> $request->get('name')
         ]);
         $object_type->save();

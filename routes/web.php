@@ -18,5 +18,5 @@ Route::view('/home', 'home');
 
 Route::get('/realestates', 'RealestateController@index')->name('realestates');
 Route::view('/owners', 'owners');
-Route::view('/base', 'base');
-
+Route::get('/base', 'ObjecTypeController@index')->name('items');
+Route::resource('object_type','ObjecTypeController');
