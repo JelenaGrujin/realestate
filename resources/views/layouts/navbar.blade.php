@@ -20,7 +20,7 @@
                     <a class="{{ Request::path()==='owners'?'nav-link active':'nav-link'}}" href="owners">Owners</a>
                 </li>
                 <li class="nav-item">
-                    <a class="{{ Request::path()==='base'?'nav-link active':'nav-link'}}" href="base">Base</a>
+                    <a class="{{ Request::path()==='object_type'?'nav-link active':'nav-link'}}" href="object_type">Base</a>
                 </li>
             </ul>
 

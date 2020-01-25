@@ -17,7 +17,12 @@
         <tr class="text-center">
             <th scope="row">{{$item->id}}</th>
             <td>{{$item->name}}</td>
-            <td><a href="{{route($table.'.destroy',$item->id)}}" class="btn-sm btn-danger">X</a></td>
+            <form action="{{ route($table.'.destroy', $item->id)}}" method="POST">
+                @method('DELETE')
+                @csrf
+            <td>
+                <button class="btn bnt-sm btn-danger">X</button></td>
+            </form>
         </tr>
         @endforeach
         <tr>

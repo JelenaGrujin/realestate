@@ -9,11 +9,11 @@
                 <nav>
                     <ul class="list-unstyled components">
                         <p>Base tables:</p>
-                        <li class="active p-2">
+                        <li class="p-2">
                             <a href="#realestateSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Realestates:</a>
                             <ul class="collapse list-unstyled" id="realestateSubmenu">
                                 <li>
-                                    <a href="#">Object types</a>
+                                    <a class="{{ Request::path()==='object_type'?'text-primary':''}}" href="object_type">Object types</a>
                                 </li>
                                 <li>
                                     <a href="#">Equipments</a>

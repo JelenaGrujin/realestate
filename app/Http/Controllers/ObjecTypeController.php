@@ -43,7 +43,7 @@ class ObjecTypeController extends Controller
             'name'=> $request->get('name')
         ]);
         $object_type->save();
-        return redirect('/base');
+        return redirect('/object_type');
     }
 
     /**
@@ -84,11 +84,11 @@ class ObjecTypeController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
-        $item = ObjectType::destroy($id);
-        return redirect('/base');
+        ObjectType::destroy($id);
+        return redirect('/object_type');
     }
 }
