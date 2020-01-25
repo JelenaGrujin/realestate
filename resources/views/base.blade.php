@@ -17,11 +17,11 @@
         <tr class="text-center">
             <th scope="row">{{$item->id}}</th>
             <td>{{$item->name}}</td>
-            <td><a href="#" class="btn-sm btn-danger">X</a></td>
+            <td><a href="{{route($table.'.destroy',$item->id)}}" class="btn-sm btn-danger">X</a></td>
         </tr>
         @endforeach
         <tr>
-            <form method="post" action="{{route('object_type.store')}}">
+            <form method="post" action="{{route($table.'.store')}}">
                 @csrf
             <th scope="row">add:</th>
             <td ><input class="form-control form-control-sm" type="text" name="name" ></td>

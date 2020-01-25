@@ -16,7 +16,8 @@ class ObjecTypeController extends Controller
     {
         $items = ObjectType::all();
         $tabl = new ObjectType();
-        $table = $tabl->getTable();
+        $table = substr($tabl->getTable(), 0, -1);
+
         return view('base',['items'=>$items,'table'=>$table]);
     }
 
@@ -87,6 +88,7 @@ class ObjecTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $item = ObjectType::destroy($id);
+        return redirect('/base');
     }
 }
