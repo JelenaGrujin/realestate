@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Object_type;
+use App\ObjectType;
 use Illuminate\Http\Request;
 
 class ObjecTypeController extends Controller
@@ -14,8 +14,10 @@ class ObjecTypeController extends Controller
      */
     public function index()
     {
-        $items = Object_type::all();
-        return view('base',['items'=>$items]);
+        $items = ObjectType::all();
+        $tabl = new ObjectType();
+        $table = $tabl->getTable();
+        return view('base',['items'=>$items,'table'=>$table]);
     }
 
     /**
@@ -36,7 +38,7 @@ class ObjecTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $object_type= new Object_type([
+        $object_type= new ObjectType([
             'name'=> $request->get('name')
         ]);
         $object_type->save();

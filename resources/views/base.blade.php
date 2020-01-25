@@ -3,10 +3,10 @@
     <table class="table">
         <thead>
         <tr>
-            <th colspan="3" scope="col" class="text-center"></th>
+            <th colspan="3" scope="col" class="text-center">{{$table}}</th>
         </tr>
 
-        <tr>
+        <tr class="text-center">
             <th scope="col">#</th>
             <th scope="col">title</th>
             <th scope="col">delete</th>
@@ -14,7 +14,7 @@
         </thead>
         <tbody>
         @foreach($items as $item)
-        <tr>
+        <tr class="text-center">
             <th scope="row">{{$item->id}}</th>
             <td>{{$item->name}}</td>
             <td><a href="#" class="btn-sm btn-danger">X</a></td>
@@ -24,7 +24,7 @@
             <form method="post" action="{{route('object_type.store')}}">
                 @csrf
             <th scope="row">add:</th>
-            <td ><input class="form-control" type="text" name="name" ></td>
+            <td ><input class="form-control form-control-sm" type="text" name="name" ></td>
             <td><input class="btn-sm btn-primary" type="submit"></td>
             </form>
         </tr>
