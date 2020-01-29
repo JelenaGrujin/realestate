@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\ObjectType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
-class ObjecTypeController extends Controller
+class DataBaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,9 @@ class ObjecTypeController extends Controller
      */
     public function index()
     {
-        $items = ObjectType::all();
-        $tabl = new ObjectType();
-        $table = substr($tabl->getTable(), 0, -1);
+        $items = $this->model::all();
 
-        return view('base',['items'=>$items,'table'=>$table]);
+        return view('base',['items'=>$items,'table'=>trim($this->model,"App\\")]);
     }
 
     /**
@@ -39,11 +38,11 @@ class ObjecTypeController extends Controller
      */
     public function store(Request $request)
     {
-        $object_type= new ObjectType([
+        $new= new $this->model([
             'name'=> $request->get('name')
         ]);
-        $object_type->save();
-        return redirect('/object_type');
+        $new->save();
+        return redirect('/ObjectType');
     }
 
     /**
@@ -88,7 +87,7 @@ class ObjecTypeController extends Controller
      */
     public function destroy($id)
     {
-        ObjectType::destroy($id);
-        return redirect('/object_type');
+        $this->model::destroy($id);
+        return redirect('/ObjectType');
     }
 }
