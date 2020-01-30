@@ -45,7 +45,7 @@ class CreateRealestatesTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 		});
-
+/*
         Schema::table('realestates', function (Blueprint $table) {
             $table->foreign('realestate_type_id')->references('id')->on('realestate_types')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('status_id')->references('id')->on('statuses')->onUpdate('cascade')->onDelete('cascade');
@@ -53,19 +53,19 @@ class CreateRealestatesTable extends Migration {
             $table->foreign('structure_id')->references('id')->on('structures')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('owner_id')->references('id')->on('owners')->onUpdate('cascade')->onDelete('cascade');
         });
-
+*/
 	}
 
 	public function down()
 	{
 		Schema::drop('realestates');
-
+/*
         Schema::table('realestates',function (Blueprint $table){
             $table->dropForeign('realestates_realestate_type_id_foreign');
             $table->dropForeign('realestates_status_id_foreign');
             $table->dropForeign('realestates_payment_option_id_foreign');
             $table->dropForeign('realestates_structure_id_foreign');
             $table->dropForeign('realestates_owner_id_foreign');
-        });
+        });*/
 	}
 }

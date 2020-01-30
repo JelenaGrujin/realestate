@@ -21,11 +21,11 @@ class CreateRealestateClaimsTable extends Migration
 
             $table->timestamps();
         });
-
+/*
         Schema::table('realestate_claims',function (Blueprint $table){
             $table->foreign('realestate_id')->references('id')->on('realestates')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('claim_id')->references('id')->on('claims')->onUpdate('cascade')->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
@@ -36,10 +36,10 @@ class CreateRealestateClaimsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('realestate_claims');
-
+/*
         Schema::table('realestate_claims',function (Blueprint $table){
             $table->dropForeign('realestate_claims_realestate_id_foreign');
             $table->dropForeign('realestate_claims_claim_id_foreign');
-        });
+        });*/
     }
 }

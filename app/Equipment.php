@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Equipement extends Model
+class Equipment extends Model
 {
-    protected $fillable = 'name';
+    protected $table = 'equipments';
+    protected $fillable = ['name'];
 
     public function realestate(){
         return $this->hasMany(Realestate_equipment::class);

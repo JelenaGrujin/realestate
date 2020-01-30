@@ -21,11 +21,11 @@ class CreateRealestateObjectTypesTable extends Migration
 
             $table->timestamps();
         });
-
+/*
         Schema::table('realestate_object_types', function (Blueprint $table) {
             $table->foreign('realestate_id')->references('id')->on('realestates')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('object_type_id')->references('id')->on('object_types')->onUpdate('cascade')->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
@@ -36,10 +36,10 @@ class CreateRealestateObjectTypesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('realestate_object_types');
-
+/*
         Schema::table('realestate_object_types',function (Blueprint $table){
             $table->dropForeign('realestate_object_types_realestate_id_foreign');
             $table->dropForeign('realestate_object_types_object_type_id_foreign');
-        });
+        });*/
     }
 }

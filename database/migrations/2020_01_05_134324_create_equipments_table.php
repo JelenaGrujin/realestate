@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRealestateStructuresTable extends Migration
+class CreateEquipmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateRealestateStructuresTable extends Migration
      */
     public function up()
     {
-        Schema::create('realestate_structures', function (Blueprint $table) {
+        Schema::create('equipments', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->smallInteger('name');
+            $table->string('name',20);
 
             $table->timestamps();
         });
@@ -28,6 +28,6 @@ class CreateRealestateStructuresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('realestate_structures');
+        Schema::dropIfExists('equipments');
     }
 }

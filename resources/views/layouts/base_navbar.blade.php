@@ -13,37 +13,37 @@
                             <a href="#realestateSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Realestates:</a>
                             <ul class="collapse list-unstyled" id="realestateSubmenu">
                                 <li>
-                                    <a class="{{ Request::path()==='object_type'?'text-primary':''}}" href="object_type">Object types</a>
+                                    <a class="{{ Request::path()==='ObjectType'?'text-primary':''}}" href="ObjectType">Object types</a>
                                 </li>
                                 <li>
-                                    <a href="#">Equipments</a>
+                                    <a class="{{Request::path()==='Equipment'?'text-primary':''}}" href="Equipment">Equipments</a>
                                 </li>
                                 <li>
-                                    <a href="#">Structure</a>
+                                    <a class="{{Request::path()==='Disposition'?'text-primary':''}}" href="Disposition">Disposition</a>
                                 </li>
                                 <li>
-                                    <a href="#">Heating</a>
+                                    <a class="{{Request::path()==='Heating'?'text-primary':''}}" href="Heating">Heating</a>
                                 </li>
                                 <li>
-                                    <a href="#">Carpentry</a>
+                                    <a class="{{Request::path()==='Carpentry'?'text-primary':''}}" href="Carpentry">Carpentry</a>
                                 </li>
                                 <li>
-                                    <a href="#">Kitchens</a>
+                                    <a class="{{Request::path()==='Kitchen'?'text-primary':''}}" href="Kitchen">Kitchens</a>
                                 </li>
                                 <li>
-                                    <a href="#">Bathrooms</a>
+                                    <a class="{{Request::path()==='Bathroom'?'text-primary':''}}" href="Bathroom">Bathrooms</a>
                                 </li>
                                 <li>
-                                    <a href="#">Accessories</a>
+                                    <a class="{{Request::path()==='Accessories'?'text-primary':''}}" href="Accessories">Accessories</a>
                                 </li>
                                 <li>
-                                    <a href="#">Garages</a>
+                                    <a class="{{Request::path()==='Garage'?'text-primary':''}}" href="Garage">Garages</a>
                                 </li>
                                 <li>
-                                    <a href="#">Providers</a>
+                                    <a class="{{Request::path()==='Provider'?'text-primary':''}}" href="Provider">Providers</a>
                                 </li>
                                 <li>
-                                    <a href="#">Terraces</a>
+                                    <a class="{{Request::path()==='Terrace'?'text-primary':''}}" href="Terrace">Terraces</a>
                                 </li>
                             </ul>
                         </li>

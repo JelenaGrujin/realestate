@@ -29,18 +29,18 @@ class CreateOwnersTable extends Migration {
             $table->timestamps();
             $table->softDeletes();
 		});
-
+/*
 		Schema::table('owners', function (Blueprint $table){
 		    $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-        });
+        });*/
 	}
 
 	public function down()
 	{
 		Schema::drop('owners');
-
+/*
 		Schema::table('owners', function (Blueprint $table){
 		    $table->dropForeign('owners_user_id_foreign');
-        });
+        });*/
 	}
 }

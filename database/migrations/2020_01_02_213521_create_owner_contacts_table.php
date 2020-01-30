@@ -17,18 +17,18 @@ class CreateOwnerContactsTable extends Migration {
             $table->timestamps();
             $table->softDeletes();
 		});
-
+/*
         Schema::table('owner_contacts', function (Blueprint $table) {
             $table->foreign('owner_id')->references('id')->on('owners')->onUpdate('cascade')->onDelete('cascade');
-        });
+        });*/
 	}
 
 	public function down()
 	{
 		Schema::drop('owner_contacts');
-
+/*
         Schema::table('owner_contacts', function(Blueprint $table) {
             $table->dropForeign('owner_contacts_owner_id_foreign');
-        });
+        });*/
 	}
 }

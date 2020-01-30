@@ -21,11 +21,11 @@ class CreateRealestateCarpentriesTable extends Migration
 
             $table->timestamps();
         });
-
+/*
         Schema::table('realestate_carpentries',function (Blueprint $table){
             $table->foreign('realestate_id')->references('id')->on('realestates')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('carpentry_id')->references('id')->on('carpentries')->onDelete('cascade')->onUpdate('cascade');
-        });
+        });*/
     }
 
     /**
@@ -36,10 +36,10 @@ class CreateRealestateCarpentriesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('realestate_carpentries');
-
+/*
         Schema::table('realestate_carpentries', function (Blueprint $table){
             $table->dropForeign('realestate_carpentries_realestate_id_foreign');
             $table->dropForeign('realestate_carpentries_carpentry_id_foreign');
-        });
+        });*/
     }
 }

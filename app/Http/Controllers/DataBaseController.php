@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\ObjectType;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\App;
 
 class DataBaseController extends Controller
 {
+    public function getClassName(){
+         $class=trim($this->model,'App');
+        return stripcslashes($class);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +18,10 @@ class DataBaseController extends Controller
      */
     public function index()
     {
+        //dd($this->model);
         $items = $this->model::all();
 
-        return view('base',['items'=>$items,'table'=>trim($this->model,"App\\")]);
+        return view('base',['items'=>$items,'table'=>$this->getClassName()]);
     }
 
     /**
@@ -42,7 +46,7 @@ class DataBaseController extends Controller
             'name'=> $request->get('name')
         ]);
         $new->save();
-        return redirect('/ObjectType');
+        return redirect($this->getClassName());
     }
 
     /**
@@ -88,6 +92,6 @@ class DataBaseController extends Controller
     public function destroy($id)
     {
         $this->model::destroy($id);
-        return redirect('/ObjectType');
+        return redirect($this->getClassName());
     }
 }

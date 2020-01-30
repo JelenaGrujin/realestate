@@ -21,11 +21,11 @@ class CreateRealestateBathroomsTable extends Migration
 
             $table->timestamps();
         });
-
+/*
         Schema::table('realestate_bathrooms', function (Blueprint $table) {
             $table->foreign('realestate_id')->references('id')->on('realestates')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('bathroom_id')->references('id')->on('bathrooms')->onUpdate('cascade')->onDelete('cascade');
-        });
+        });*/
     }
 
     /**
@@ -36,10 +36,10 @@ class CreateRealestateBathroomsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('realestate_bathrooms');
-
+/*
         Schema::table('realestate_bathrooms',function (Blueprint $table){
             $table->dropForeign('realestate_bathrooms_realestate_id_foreign');
             $table->dropForeign('realestate_bathrooms_bathroom_id_foreign');
-        });
+        });*/
     }
 }

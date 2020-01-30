@@ -27,7 +27,7 @@ class Realestate extends Model
     }
 
     public function structure(){
-        return $this->belongsTo(Realestate_structure::class);
+        return $this->belongsTo(Structure::class);
     }
 
     public function city(){
